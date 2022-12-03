@@ -113,3 +113,24 @@ exports.softDelete = async (params_id) => {
     };
   }
 };
+exports.Exists = async (where) => {
+  try {
+    const user = await Category.findOne(where);
+
+    if (user) {
+      return { success: true, message: responseMessages.userFound, data: user };
+    } else {
+      return {
+        success: false,
+        message: responseMessages.userNotFound,
+        data: null,
+      };
+    }
+  } catch (error) {
+    return {
+      success: false,
+      message: error,
+      data: null,
+    };
+  }
+};
