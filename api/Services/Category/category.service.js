@@ -8,7 +8,7 @@ exports.create = async (category) => {
       categoryName: category.categoryName,
       categoryImg: category.categoryImg,
     });
-    console.log(info);
+   
     const categoryData = await info.save();
 
     if (categoryData) {

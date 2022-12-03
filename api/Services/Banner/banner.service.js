@@ -8,7 +8,7 @@ exports.create = async (banner) => {
       bannerName: banner.bannerName,
       bannerImg: banner.bannerImg,
     });
-    console.log(info);
+  
     const bannerData = await info.save();
 
     if (bannerData) {
